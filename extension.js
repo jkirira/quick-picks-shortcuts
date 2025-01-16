@@ -17,14 +17,31 @@ function activate(context) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('quick-picks-shortcuts.helloWorld', function () {
-		// The code you place here will be executed every time your command is executed
+	const showQuickPicksShortcuts = vscode.commands.registerCommand('quick-picks-shortcuts.showQuickPicksShortcuts', function () {
+		let items = [];
 
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from Quick Picks Shortcuts!');
+		vscode.window.showQuickPick(items).then(selection => {
+			// the user canceled the selection
+			if (!selection) {
+				return;
+			}
+
+			// the user selected some item. You could use `selection.name` too
+			switch (selection.description) {
+				case "onItem":
+					doSomething();
+					break;
+				case "anotherItem":
+					doSomethingElse();
+					break;
+				//.....
+				default:
+					break;
+			}
+		});
 	});
 
-	context.subscriptions.push(disposable);
+	context.subscriptions.push(showQuickPicksShortcuts);
 }
 
 // This method is called when your extension is deactivated

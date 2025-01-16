@@ -12,10 +12,35 @@
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "quick-picks-shortcuts.helloWorld",
-      "title": "Hello World"
-    }]
+    "commands": [
+      {
+        "command": "quick-picks-shortcuts.showQuickPicksShortcuts",
+        "title": "Show Quick Picks Shortcuts"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "quick-picks-shortcuts.showQuickPicksShortcuts"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Quick Picks Shortcuts",
+      "properties": {
+        "quick-picks-shortcuts.shortcuts": {
+          "type": "object",
+          "description": "Add your shortcuts that you would like to appear in quick picks.",
+          "scope": "application",
+          "patternProperties": {
+            ".*": { "type": "string" }
+          },
+          "default": {
+            "Sample Command Display Name" : "sample.command.name"
+          }
+        }
+      }
+    }
   },
   "scripts": {
     "lint": "eslint .",
