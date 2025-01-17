@@ -19,14 +19,15 @@ function activate(context) {
 	// The commandId parameter must match the command field in package.json
 	const showQuickPicksShortcuts = vscode.commands.registerCommand('quick-picks-shortcuts.showQuickPicksShortcuts', function () {
 
+		// get shortcuts from settings configuration
 		let config = vscode.workspace.getConfiguration('quick-picks-shortcuts');
-
 		// console.log('config', config, config.shortcuts);
 
 		let shortcuts = config.shortcuts ?? {};
 
 		let shortcutsList = Object.keys(shortcuts);
 
+		// remove placeholder shortcut
 		let placeholderIndex = Object.values(shortcuts).findIndex(shortcutCommand => shortcutCommand == "example.command.name")
 
 		if (placeholderIndex > -1) {
@@ -35,6 +36,7 @@ function activate(context) {
 
 		new Promise(async (res, rej) => {
 			try {
+				// show shortcuts as quick picks
 				let selection = await vscode.window.showQuickPick(shortcutsList);
 				// console.log('selection', selection);
 
@@ -42,12 +44,14 @@ function activate(context) {
 					return;
 				}
 
+				// check if selected command exists
 				let availableCommands = await vscode.commands.getCommands(true);
 				// console.log('availableCommands', availableCommands)
 
 				let commandExists = !!shortcuts[selection] && availableCommands.some(command => command === shortcuts[selection]);
 
 				if (commandExists) {
+					// if selected command exists run it
 					await vscode.commands.executeCommand(shortcuts[selection]);
 				}
 
