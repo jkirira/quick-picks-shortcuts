@@ -18,34 +18,54 @@ function activate(context) {
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
 	const showQuickPicksShortcuts = vscode.commands.registerCommand('quick-picks-shortcuts.showQuickPicksShortcuts', function () {
-		let items = [];
 
-		vscode.window.showQuickPick(items).then(selection => {
-			// the user canceled the selection
-			if (!selection) {
-				return;
+		let config = vscode.workspace.getConfiguration('quick-picks-shortcuts');
+
+		// console.log('config', config, config.shortcuts);
+
+		let shortcuts = config.shortcuts ?? {};
+
+		let shortcutsList = Object.keys(shortcuts);
+
+		let placeholderIndex = Object.values(shortcuts).findIndex(shortcutCommand => shortcutCommand == "example.command.name")
+
+		if (placeholderIndex > -1) {
+			shortcutsList.splice(placeholderIndex, 1);
+		}
+
+		new Promise(async (res, rej) => {
+			try {
+				let selection = await vscode.window.showQuickPick(shortcutsList);
+				// console.log('selection', selection);
+
+				if (!selection) {
+					return;
+				}
+
+				let availableCommands = await vscode.commands.getCommands(true);
+				// console.log('availableCommands', availableCommands)
+
+				let commandExists = !!shortcuts[selection] && availableCommands.some(command => command === shortcuts[selection]);
+
+				if (commandExists) {
+					await vscode.commands.executeCommand(shortcuts[selection]);
+				}
+
+			} catch (e) {
+				console.log('showQuickPicksShortcuts error: ', e)
+				await vscode.window.showErrorMessage('Could not complete this action.')
 			}
 
-			// the user selected some item. You could use `selection.name` too
-			switch (selection.description) {
-				case "onItem":
-					doSomething();
-					break;
-				case "anotherItem":
-					doSomethingElse();
-					break;
-				//.....
-				default:
-					break;
-			}
+			res();
 		});
+
 	});
 
 	context.subscriptions.push(showQuickPicksShortcuts);
 }
 
 // This method is called when your extension is deactivated
-function deactivate() {}
+function deactivate() { }
 
 module.exports = {
 	activate,
