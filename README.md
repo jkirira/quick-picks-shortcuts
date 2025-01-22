@@ -1,35 +1,39 @@
 # quick-picks-shortcuts README
 
-This is the README for your extension "quick-picks-shortcuts". After writing up a brief description, we recommend including the following sections.
+Access your favourite vs code shortcuts via quick picks.
+
+
+## Background
+
+This project was borne out of my frustration with VS Code's complex key bindings for the "fold" and "unfold" commands.
+
+I was looking for a way to simplify my work flow by adding these commands to the context menu thereby accessing them via a simple click action.
+
+Upon doing some research, I found that the only way to add items to the context menu was with a VS Code extension. However it occurred to me that this would be a very limited extension if all it did was to add two items to the context menu.
+
+Therefore, I decided to try make it so that a user could add as many commands as they like.
+
+However the issue I encountered with allowing for user-provided context menu items is that any context menu items that are added by an extension are supposed to be specified within the extension's package.json file. This is a problem because it is difficult to make changes to the package.json at runtime, not to mention the fact that the package.json file is among the files that are submitted when publishing the extension to the VS Code marketplace.
+
+I ended up using a single context menu item that opens quick picks list where the user-provided commands can be displayed, added and removed at runtime.
+
+Further development to this extension is not actively going on but this could change in the future.
+Bug fixes will be addessed as soon as possible.
+
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Access arbitrary VS Code commands via quick picks.
 
-For example if there is an image subfolder under your extension project workspace:
+1. Add, Edit or Remove commands from the extension settings area
+\!\[Add, Edit or Remove commands from the extension settings area\]\(readme_images/1.jpg\)
 
-\!\[feature X\]\(images/feature-x.png\)
+2. Right click in the editor and click on "Quick Picks Shortcuts"
+\!\[Right click in the editor and click on "Quick Picks Shortcuts"\]\(readme_images/2.jpg\)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+3. Your commands should be listed in the quick picks and you can click on them to run it.
+\!\[Your commands should be listed in the quick picks and you can click on them to run it\]\(readme_images/3.jpg\)
 
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
 
 ## Release Notes
 
@@ -37,29 +41,4 @@ Users appreciate release notes as you update your extension.
 
 ### 1.0.0
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Initial release.

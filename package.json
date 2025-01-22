@@ -3,6 +3,12 @@
   "displayName": "Quick Picks Shortcuts",
   "description": "Access your favourite commands as quick picks",
   "version": "0.0.1",
+  "publisher": "James Kirira",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jkirira/quick-picks-shortcuts.git"
+  },
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -15,7 +21,7 @@
     "commands": [
       {
         "command": "quick-picks-shortcuts.showQuickPicksShortcuts",
-        "title": "Show Quick Picks Shortcuts"
+        "title": "Quick Picks Shortcuts"
       }
     ],
     "menus": {

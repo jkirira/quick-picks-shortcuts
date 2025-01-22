@@ -23,6 +23,25 @@ function activate(context) {
 		let config = vscode.workspace.getConfiguration('quick-picks-shortcuts');
 		// console.log('config', config, config.shortcuts);
 
+
+		/*
+		*
+		*
+		*
+		*				TODO:
+		*
+		*					1.	Add icon
+		*
+		*					2.	Push to microsoft store
+		*
+		*
+		*
+		*
+		*
+		*
+		*
+		*/
+
 		let shortcuts = config.shortcuts ?? {};
 
 		let shortcutsList = Object.keys(shortcuts);
