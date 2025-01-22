@@ -27,9 +27,9 @@ Access arbitrary VS Code commands via quick picks.
 
 1. Add, Edit or Remove commands from the extension settings area.
 
-![Add, Edit or Remove commands from the extension settings area](readme_images/1.jpg)
+**NB:** You can view the default keyboard shortcuts and commands as a JSON file using the command ***Preferences: Open Default Keyboard Shortcuts (JSON)***.
 
-**NB:** You can view the default keyboard shortcuts as a JSON file using the command **Preferences: Open Default Keyboard Shortcuts (JSON)**.
+![Add, Edit or Remove commands from the extension settings area](readme_images/1.jpg)
 
 2. Right click in the editor and click on "Quick Picks Shortcuts".
 
@@ -38,6 +38,10 @@ Access arbitrary VS Code commands via quick picks.
 3. Your commands should be listed in the quick picks and you can click on them to run it.
 
 ![Your commands should be listed in the quick picks and you can click on them to run it](readme_images/3.jpg)
+
+
+## To Do
+* Add support for running keyboard shortcuts instead of VS Code commands
 
 
 ## Release Notes
