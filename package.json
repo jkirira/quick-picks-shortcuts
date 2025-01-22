@@ -1,13 +1,20 @@
 {
   "name": "quick-picks-shortcuts",
   "displayName": "Quick Picks Shortcuts",
-  "description": "Access your favourite commands as quick picks",
+  "description": "Simple way to run arbitrary VS Code commands via mouse clicks.",
+  "keywords": [
+    "Commands",
+    "Click",
+    "Shortcut",
+    "Menu"
+  ],
   "version": "0.0.1",
   "publisher": "James Kirira",
   "repository": {
     "type": "git",
     "url": "https://github.com/jkirira/quick-picks-shortcuts.git"
   },
+  "homepage": "https://github.com/jkirira/quick-picks-shortcuts/blob/master/README.md",
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.96.0"
