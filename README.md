@@ -1,6 +1,6 @@
 # quick-picks-shortcuts README
 
-Access your favourite vs code shortcuts via quick picks.
+Easier way to access VS Code commands.
 
 
 ## Background
