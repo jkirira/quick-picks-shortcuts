@@ -26,18 +26,16 @@ Bug fixes will be addessed as soon as possible.
 Access arbitrary VS Code commands via quick picks.
 
 1. Add, Edit or Remove commands from the extension settings area
-\!\[Add, Edit or Remove commands from the extension settings area\]\(readme_images/1.jpg\)
+![Add, Edit or Remove commands from the extension settings area](readme_images/1.jpg)
 
 2. Right click in the editor and click on "Quick Picks Shortcuts"
-\!\[Right click in the editor and click on "Quick Picks Shortcuts"\]\(readme_images/2.jpg\)
+![Right click in the editor and click on "Quick Picks Shortcuts"](readme_images/2.jpg)
 
 3. Your commands should be listed in the quick picks and you can click on them to run it.
-\!\[Your commands should be listed in the quick picks and you can click on them to run it\]\(readme_images/3.jpg\)
+![Your commands should be listed in the quick picks and you can click on them to run it](readme_images/3.jpg)
 
 
 ## Release Notes
-
-Users appreciate release notes as you update your extension.
 
 ### 1.0.0
 
