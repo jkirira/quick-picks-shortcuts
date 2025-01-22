@@ -29,6 +29,8 @@ Access arbitrary VS Code commands via quick picks.
 
 ![Add, Edit or Remove commands from the extension settings area](readme_images/1.jpg)
 
+**NB:** You can view the default keyboard shortcuts as a JSON file using the command **Preferences: Open Default Keyboard Shortcuts (JSON)**.
+
 2. Right click in the editor and click on "Quick Picks Shortcuts".
 
 ![Right click in the editor and click on "Quick Picks Shortcuts"](readme_images/2.jpg)
