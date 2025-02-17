@@ -23,6 +23,7 @@ Access arbitrary VS Code commands via quick picks.
 
 ## To Do
 * Add support for running keyboard shortcuts instead of VS Code commands
+* Research on alternative implementation by editing package.json and restarting extension
 
 
 ## Release Notes
